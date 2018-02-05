@@ -1,4 +1,4 @@
-const controller = new NegociacaoController();
+let controller = new NegociacaoController();
 
 document
     .querySelector('.form')
