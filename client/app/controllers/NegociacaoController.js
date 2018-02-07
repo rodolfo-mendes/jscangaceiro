@@ -21,10 +21,16 @@ class NegociacaoController {
     }
 
     adiciona(event) {
-        event.preventDefault();
-        this._negociacoes.adiciona(this._criaNegociacao());
-        this._mensagem.texto = 'Negociação adicionada com sucesso';
-        this._limpaFormulario();
+        try{
+            event.preventDefault();
+            this._negociacoes.adiciona(this._criaNegociacao());
+            this._mensagem.texto = 'Negociação adicionada com sucesso';
+            this._limpaFormulario();
+            this._limpaFormula();
+        }catch(err){
+            console.log(err);
+            this._mensagem.texto = err.message;
+        }
     }
 
     _limpaFormulario() {
