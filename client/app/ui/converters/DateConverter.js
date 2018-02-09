@@ -13,7 +13,7 @@ class DateConverter{
 
     static paraData(texto){
         if(!/^\d{2}\/\d{2}\/\d{4}$/.test(texto)){
-            throw new Error('Data deve estar no formato dd/mm/aaaa');
+            throw new DataInvalidaException();
         }
 
         let data = new Date(...
